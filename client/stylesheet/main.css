@@ -1,0 +1,32 @@
+/*.btn-blue {*/
+    /*color: #fff;*/
+    /*background-color: lawngreen;*/
+    /*border-color: #12159E;*/
+/*}*/
+/*.btn-blue:hover {*/
+    /*background-color: yellow;*/
+    /*color: #76ff03;*/
+/*}*/
+/*body {*/
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    /*font-size: 14px;*/
+    /*line-height: 1.42857143;*/
+    /*color: #0CF10C;*/
+    /*background-color: #fff;*/
+/*}*/
+element.style {
+}
+
+.navbar-inverse {
+    background-color: rgba(175, 34, 34, 0.95);
+    border-color: #23e87b;
+}
+
+
+element.style {
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #3c1;
+    background-color: transparent;
+}
