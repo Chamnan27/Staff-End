@@ -21,7 +21,7 @@ let schema = new SimpleSchema({
     },
     dob: {
         type: Date,
-        label: 'Date of Birth',
+        label: "Date of birth",
         autoform: {
             type: 'bootstrap-datetimepicker',
             afFieldInput: {

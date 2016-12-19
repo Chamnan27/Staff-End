@@ -1,5 +1,7 @@
 // import moment from 'moment';
 import {Contract} from "../../../both/collection/report/contract";
+import {Company} from '../../../both/collection/company';
+
 
 Template.contractList.onCreated(function () {
 
@@ -57,6 +59,9 @@ Template.contractListReport.onCreated(function () {
 Template.contractListReport.helpers({
     data(){
         return Template.instance().dataState.get();
+    },
+    company(){
+        return Company.findOne();
     }
 });
 // Template.contractListReport.helpers({

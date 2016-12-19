@@ -29,9 +29,23 @@ TabularTables.Contract = new Tabular.Table({
         {data: "type", title: "Type"},
         {data: "position", title: "Position"},
         {data: "salary", title: "Salary"},
+
+        {
+            data: "status",
+            title: "Status",
+            render: function (val, type, doc) {
+                console.log(val);
+                console.log(doc._id);
+
+                return '<a class="btn btn-default js-status" href="/statusUpdate/'+doc._id+'">'+val+'</a>';
+
+            }
+           /* title: "Status",
+            tmpl: Meteor.isClient && Template.statusAction*/
+        },
         {
             title: "Action",
-            tmpl: Meteor.isClient && Template.staffAction
+            tmpl: Meteor.isClient && Template.contractAction
         }
     ]
 

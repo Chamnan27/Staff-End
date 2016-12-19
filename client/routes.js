@@ -97,7 +97,7 @@ FlowRouter.route('/staffList', {
 FlowRouter.route('/staffListReport', {
     name: 'staffListReport',
     action: function(params, queryParams) {
-        BlazeLayout.render('reportLayout', {content: 'staffListReport'});
+        BlazeLayout.render('staffListReport', {content: 'staffListReport'});
     }
 });
 
@@ -107,6 +107,12 @@ FlowRouter.route('/contractList', {
     action: function(params, queryParams) {
         BlazeLayout.render('mainLayout', {content: 'contractList'});
     }
+});
+FlowRouter.route('/contractUpdate/:id', {
+    name: 'contractUpdate',
+    action: function(params, queryParams) {
+        BlazeLayout.render('mainLayout', {content: 'contractUpdate'});
+    },
 });
 FlowRouter.route('/contractListReport', {
     name: 'contractListReport',
@@ -132,4 +138,16 @@ FlowRouter.route('/companyUpdate/:id', {
     action: function(params, queryParams) {
         BlazeLayout.render('mainLayout', {content: 'companyUpdate'});
     }
+});
+// FlowRouter.route('/company', {
+//     name:  'company',
+//     action: function(params, queryParams) {
+//         BlazeLayout.render('mainOut', {content: 'company'});
+//     }
+// });
+FlowRouter.route('/statusUpdate/:contractId', {
+    name: 'statusUpdate',
+    action: function(params, queryParams) {
+        BlazeLayout.render('mainLayout', {content: 'statusUpdate'});
+    },
 });

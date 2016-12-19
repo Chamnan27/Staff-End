@@ -1,4 +1,4 @@
-<template name="contractList">
+<template name="contractList" xmlns="http://www.w3.org/1999/html">
     <h1 class="page-header">Contract List</h1>
     {{#autoForm schema=contractSchema id="contractList"}}
         {{>afQuickField name='fromDate'}}
@@ -10,18 +10,33 @@
 </template>
 
 <template name="contractListReport">
-    Contract List Report
-       <div calass="container">
+    <div class="container">
         <div class="row">
-            <div class="col-md-offset-2 col-md-8">
+            <div class="col-md-12">
+                {{#if company}}
+                    {{#with company}}
+                        <center><h3>{{name}}</h3><br>
+                            Address:{{address}}<br>
+                            Telephone:{{telephone}}<br>
+                            Email:{{email}}<br>
+                            Website:{{website}}
+                        </center>
+                    {{/with}}
+                {{/if}}
+                <hr>
                 {{#if data}}
                     <br>
                     <br>
-                    <table class="table table-bordered" bgcolor="blue">
+                    <table class="table table-bordered">
                         <thead>
-                        <tr bgcolor="#db7093">
+                        <tr>
                             <th class="text-center">ID</th>
                             <th class="text-center">Staff</th>
+                            <th class="text-center">Gender</th>
+                            <th class="text-center">Date of birth</th>
+                            <th class="text-center">Address</th>
+                            <th class="text-center">Phone</th>
+                            <th class="text-center">Email</th>
                             <th class="text-center">Position</th>
                             <th class="text-center">Start Date</th>
                             <th class="text-center">End Date</th>
@@ -30,23 +45,53 @@
                         </thead>
                         <tbody>
                         {{#each data}}
-                            <tr class="alert-info">
+                            <tr>
                                 <td>{{_id}}</td>
                                 <td>{{staffDoc.name}}</td>
+                                <td>{{staffDoc.gender}}</td>
+                                <td>
+                                    <medium>{{moFormat staffDoc.dob 'ddd/MMM/YYYY'}}</medium>
+                                </td>
+                                <td>{{staffDoc.address}}</td>
+                                <td>{{staffDoc.phone}}</td>
+                                <td>{{staffDoc.email}}</td>
                                 <td>{{position}}</td>
 
                                 <td>
-
-                                        <medium>{{moFormat startDate 'ddd/MMM/YYYY'}}</medium>
+                                    <medium>{{moFormat startDate 'ddd/MMM/YYYY'}}</medium>
                                 </td>
                                 <td>
                                     <big>{{moFormat endDate 'ddd/MMM/YYYY'}}</big>
-                                    </td>
+                                </td>
                                 <td>{{salary}}</td>
+                                <!--<td>{{status}}</td>-->
                             </tr>
                         {{/each}}
                         </tbody>
                     </table>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>name</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 style="text-align: center;">boy</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 style="text-align: right;">date</h5>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>---------</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 style="text-align: center;">---------</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 style="text-align: right;">---------</h5>
+                        </div>
+                    </div>
                 {{else}}
                     <i class="fa fa-spinner"></i>Waiting...
                 {{/if}}

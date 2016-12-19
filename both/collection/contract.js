@@ -53,9 +53,9 @@ let schema = new SimpleSchema({
             type: 'select',
             options() {
                 return [
-                    {label:"Probation", value:"probation"},
-                    {label:"Contract", value:"contract"},
-                    {label:"Permanent", value:"permanent"}
+                    {label: "Probation", value: "probation"},
+                    {label: "Contract", value: "contract"},
+                    {label: "Permanent", value: "permanent"}
                 ]
             }
         }
@@ -67,9 +67,9 @@ let schema = new SimpleSchema({
             type: 'select',
             options() {
                 return [
-                    {label:"Admin", value:"admin"},
-                    {label:"Manager", value:"manager"},
-                    {label:"Staff", value:"staff"}
+                    {label: "Admin", value: "admin"},
+                    {label: "Manager", value: "manager"},
+                    {label: "Staff", value: "staff"}
                 ]
             }
         }
@@ -77,6 +77,24 @@ let schema = new SimpleSchema({
     salary: {
         type: Number,
         label: 'Salary'
+    },
+    status: {
+        type: String,
+        label: 'status',
+        autoValue(){
+            if(this.isInsert){
+                return "Action"
+            }
+        },
+        autoform: {
+            type: 'select',
+            options() {
+                return [
+                    {label: "Action", value: "Action"},
+                    {label: "Stop", value: "Stop"},
+                ]
+            }
+        }
     },
 });
 

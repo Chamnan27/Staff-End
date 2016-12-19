@@ -11,7 +11,7 @@
 
 <template name="contractInsert">
     <a href="" class="btn btn-primary js-back">Back</a>
-
+    <br>
     {{#autoForm collection=contractCollection id="contractInsert" type="insert"}}
         <div class="row">
             <div class="col-md-6">
@@ -23,6 +23,7 @@
                 {{> afQuickField name='type'}}
                 {{> afQuickField name='position'}}
                 {{> afQuickField name='salary'}}
+
             </div>
         </div>
 
@@ -52,7 +53,23 @@
 
 </template>
 
+<!--<template name="statusAction">
+    <button class="js-status">Action</button>
+    </template>-->
+<template name="statusUpdate">
+
+    {{#autoForm collection=contractCollection id="statusUpdate" doc=data type="update"}}
+        <div class="row">
+            <div class="col-md-12">
+                <a href="" class="btn btn-primary js-back">Back</a>
+                {{> afQuickField name='endDate'}}
+                {{> afQuickField name='status'}}
+                </div>
+            </div>
+        <button class="js-submit">Submit</button>
+    {{/autoForm}}
+    </template>
 <template name="contractAction">
-    <button class="btn btn-blue js-remove">លុប</button>
-    <button class="btn btn-info js-update">កែប្រែ</button>
+    <button class="fa fa-trash js-remove"></button>
+    <button class="fa fa-pencil js-update"></button>
 </template>
